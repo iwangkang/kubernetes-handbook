@@ -13,11 +13,14 @@ kubernetes master 节点包含的组件：
 
 ~~本文档记录部署一个三个节点的高可用 kubernetes master 集群步骤。（后续创建一个 load balancer 来代理访问 kube-apiserver 的请求）~~
 
-暂时未实现master节点的高可用。
+**注**：
+
+- 暂时未实现master节点的高可用
+- master节点上没有部署flannel网络插件，如果想要在master节点上也能访问ClusterIP，请参考下一节[部署ndoe节点](node-installation.md)中的配置Flanneld部分。
 
 ## TLS 证书文件
 
-pem和token.csv证书文件我们在[创建TLS证书和秘钥](create-tls-and-secret-key.md)这一步中已经创建过了。我们再检查一下。
+以下`pem`证书文件我们在[创建TLS证书和秘钥](create-tls-and-secret-key.md)这一步中已经创建过了，`token.csv`文件在[创建kubeconfig文件](create-kubeconfig.md)的时候创建。我们再检查一下。
 
 ``` bash
 $ ls /etc/kubernetes/ssl
@@ -32,7 +35,7 @@ admin-key.pem  admin.pem  ca-key.pem  ca.pem  kube-proxy-key.pem  kube-proxy.pem
 
 从 [github release 页面](https://github.com/kubernetes/kubernetes/releases) 下载发布版 tarball，解压后再执行下载脚本
 
-``` shell
+``` bash
 wget https://github.com/kubernetes/kubernetes/releases/download/v1.6.0/kubernetes.tar.gz
 tar -xzvf kubernetes.tar.gz
 cd kubernetes

@@ -10,9 +10,13 @@
 
 ![云计算演进历程](../images/cloud-computing-evolution-road.jpg)
 
+云原生应用到2020年将比目前至少翻一番，下图是Marc Wilczek的调查报告。
+
+![来自Twitter @MarcWilczek](../images/cloud-native-comes-of-age.jpg)
+
 ### 云计算介绍
 
-云计算包含的内容十分繁杂，也有很多技术和公司牵强赴会说自己是云计算公司，说自己是做云的，实际上可能风马牛不相及。说白了，云计算就是一种配置资源的方式，根据资源配置方式的不同我们可以把云计算从宏观上分为以下三种类型：
+云计算包含的内容十分繁杂，也有很多技术和公司牵强附会说自己是云计算公司，说自己是做云的，实际上可能风马牛不相及。说白了，云计算就是一种配置资源的方式，根据资源配置方式的不同我们可以把云计算从宏观上分为以下三种类型：
 
 - IaaS：这是为了想要建立自己的商业模式并进行自定义的客户，例如亚马逊的EC2、S3存储、Rackspace虚拟机等都是IaaS。
 - PaaS：工具和服务的集合，对于想用它来构建自己的应用程序或者想快速得将应用程序部署到生产环境而不必关心底层硬件的用户和开发者来说是特别有用的，比如Cloud Foundry、Google App Engine、Heroku等。
@@ -150,6 +154,12 @@ Kuberentes可以说是乘着docker和微服务的东风，已经推出便迅速�
 ## Kubernetes中的资源管理与容器设计模式
 
 Kubernetes通过声明式配置，真正让开发人员能够理解应用的状态，并通过同一份配置可以立马启动一个一模一样的环境，大大提高了应用开发和部署的效率，其中kubernetes设计的多种资源类型可以帮助我们定义应用的运行状态，并使用资源配置来细粒度得明确限制应用的资源使用。
+
+而容器生态的成熟是 Kubernetes 诞生的前提，在谈到容器的设计模式之前我们先来了解下容器生态，请看下图：
+
+![容器生态](../images/container-ecosystem.png)
+
+关于 Docker 容器的更多内容请参考 [Docker最佳实践](../appendix/docker-best-practice.md)。
 
 ### 容器的设计模式
 
@@ -346,6 +356,8 @@ Service mesh现在一般被翻译作服务网格，目前主流的Service mesh�
 - [微服务管理框架service mesh——Linkerd安装试用笔记](https://jimmysong.io/posts/linkerd-user-guide/)
 - [微服务管理框架service mesh——Istio安装试用笔记](https://jimmysong.io/posts/istio-installation/)
 
+更多关于 Service Mesh 的内容请访问 [Service Mesh 中文网](http://www.servicemesh.cn)。
+
 ## 使用案例
 
 Kubernetes作为云原生计算的基本组件之一，开源2年时间以来热度与日俱增，它可以跟我们的生产结合，擦出很多火花，比如FaaS和Serverless类应用，都很适合运行在kubernetes上。
@@ -454,3 +466,10 @@ Spark原生支持standalone、mesos和YARN资源调度，现已支持Kubernetes�
 下图是从Grafana监控页面上查看到的某个executor资源占用情况。
 
 ![Grafana](../images/spark-job-on-kubernetes-example-2.jpg)
+
+## 参考
+
+- [迁移到云原生应用架构指南](https://jimmysong.io/migrating-to-cloud-native-application-architectures)
+- [Cloud Native Go - 已由电子工业出版社出版](https://jimmysong.io/cloud-native-go)
+- [Cloud Native Python - 将由电子工业出版社出版](https://jimmysong.io/posts/cloud-native-python)
+- [Istio Service Mesh 中文文档](http://istio.doczh.cn/)

@@ -1,7 +1,5 @@
 # Deployment
 
-[TOC]
-
 ## 简述
 
 Deployment 为 Pod 和 ReplicaSet 提供了一个声明式定义(declarative)方法，用来替代以前的ReplicationController 来方便的管理应用。典型的应用场景包括：
@@ -351,7 +349,7 @@ REVISION    CHANGE-CAUSE
 3           kubectl set image deployment/nginx-deployment nginx=nginx:1.91
 ```
 
-因为我们创建 Deployment 的时候使用了`--recored`参数可以记录命令，我们可以很方便的查看每次 revision 的变化。
+因为我们创建 Deployment 的时候使用了`--record`参数可以记录命令，我们可以很方便的查看每次 revision 的变化。
 
 查看单个revision 的详细信息：
 
